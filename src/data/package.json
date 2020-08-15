@@ -1,0 +1,9 @@
+
+[
+    {"id":"1","nama":"gia","barang":"lemari","harga":"Rp 5.000,-","tanggal":"09/08/2020","status":"nyicil","bulan":"5"},
+    {"id":"2","nama":"Nova","barang":"kulkas","harga":"Rp 6.000,-","tanggal":"09/08/2020","status":"lunas","bulan":"12"},
+    {"id":"3","nama":"muflih","barang":"mobil sport","harga":"Rp 10.000,-","tanggal":"09/09/2020","status":"dp","bulan":"1"},
+    {"id":"4","nama":"adit","barang":"emas","harga":"Rp 12.000,-","tanggal":"08/05/2020","status":"nyicil","bulan":"4"},
+    {"id":"5","nama":"Ghofur","barang":"motor","harga":"Rp 9.000,-","tanggal":"07/04/2020","status":"nyicil","bulan":"7"},
+    {"id":"6","nama":"gia","barang":"lemari","harga":"Rp 5.000,-","tanggal":"09/08/2020","status":"nyicil","bulan":"5"}    
+]

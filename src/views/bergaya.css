@@ -144,7 +144,11 @@ body{
     width: calc(100%-250px);
     margin-top: 70px;
     margin-left: 250px;
-    padding:15px;    
+    padding:15px;
+    background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNature&psig=AOvVaw35tzBUhzDx1j5uA9hs3YnE&ust=1598601317047000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLinlI_0uusCFQAAAAAdAAAAABAD) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 .wrapper.benar .sidebar{
     width: 70px;
@@ -179,6 +183,18 @@ body{
     font-size: 14px;
     margin-bottom: 10px;
 }
+.konten .main-container{
+    width: calc(100%-250px);    
+    margin-left: 250px;
+    padding:15px;
+    height: 10vh;
+    margin-top: 80px;
+}
+.konten.salah .main-container{
+    width:calc(100%-70px);
+    margin-left: 70px;
+}
+
 @media screen and (max-width:780px){
     .wrapper .sidebar{
         width: 70px;

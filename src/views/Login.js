@@ -1,18 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router,Switch,Route,Link } from 'react-router-dom'
-import {Home} from '../views'
-
-function Login(props){   
+import React,{useContext} from 'react';
+import { Link } from 'react-router-dom'
+import {TableContext} from './Context'
+import './bergaya.css'
+function Login(){
+  const {buka}=useContext(TableContext);
+  const [bukaValue,setBukavalue]=buka
     return(
-<Router>
-  <div style={{background: "yellow"}}>
-<div className="container" style={{height:"100%",background: "rgb(29, 187, 29)",padding:"90px 40px 60px"}}>
-  <div className="row">
-    <div className="col">      
-      <span style={{color: "#0D293C",fontSize: "90px",fontWeight: "700"}}><strong>Bantu</strong></span><span style={{color:" #FFC404",fontSize: "90px",fontWeight: "700"}}><strong>Cicil</strong></span>
-    </div>
+      <div className={bukaValue?"konten":"konten salah"}>
+      <div className="main-container">
+<div className="container">
+  <div className="row">    
     <div className="col">
         <form >
+          <h1 class="display-4">LOGIN DULS!!</h1>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>                      
@@ -25,17 +25,12 @@ function Login(props){
             <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
-          <button type="submit" class="btn btn-primary"><Link to="/Home">Submit</Link></button>
+          <Link to="/home"><input class="btn btn-primary" type="button" value="Submit"/></Link>          
         </form>
     </div>
   </div>
-</div></div>
-
-<Switch>
-  <Route  path="/Home">
-    <Home/>
-  </Route>
-</Switch>
-</Router>
+</div>
+</div>
+</div>
     )}
 export default Login;

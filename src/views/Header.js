@@ -1,31 +1,18 @@
-import React,{useState} from 'react';
-import { BrowserRouter as Router,Switch,Route,Link } from 'react-router-dom'
-import {Button,Navbar,Nav, Tab} from 'react-bootstrap'
-import styled from 'styled-components'
-import LeftBar from './LeftToggle'
+import React,{useState, useContext} from 'react';
+import {Link } from 'react-router-dom'
 import './bergaya.css'
-import Table from './Table'
-import {TambahTable} from '../views'
-import Tambahtable from './TambahTable'
+import {TableContext} from './Context'
 
-// const Nav=styled.nav`
-// width:100%;
-// height:65px;
-// border-bottom: 2px solid #f1f1f1;
-// padding:0 20px;
-// display:flex;
-// justofy-content:space-between;
-// `;
 function Header() {
-    const [buka,setBukasidebar]=useState(false);
+    const {buka}=useContext(TableContext);
+    const [bukaValue,setBukavalue]=buka
     function openSidebar(){
-        setBukasidebar(!buka);
-        console.log(buka);
+        setBukavalue(!bukaValue);
     }
     return(
-    <Router>     
+    <>     
     {/* Sidebar */}
-    <div class={!buka?"wrapper":"wrapper benar"}>
+    <div class={bukaValue?"wrapper":"wrapper benar"}>
        <div class="header">
            <div class="header-menu">
                <div class="title">Benar <span>Sekali</span></div>
@@ -46,10 +33,10 @@ function Header() {
                <img style={{width: "100px",height: "100px"}} src={"imgonline-com-ua-CompressToSize-kcLy7pdg54s2Lg.jpg"}/>
                    <p>Novagia</p>
                </div>
-               <li class="item">
+               <li class="item"><Link to="/home">
                    <a href="#" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Dashboard</span>
-                   </a>
+                   </a></Link>
                </li>
                <li class="item" id="profile">
                 <a href="#profile" class="menu-btn">
@@ -76,27 +63,8 @@ function Header() {
                 </li>
            </div>
        </div>
-       {/* <!-- isi --> */}
-       <div class="main-container">           
-           <div class="container">
-               <h4>Pilih berapa baris yang ingin dihitung</h4>               
-               <h2>Simple Pagination Example using Datatables Js Library</h2><br/>
-               <Route path="/" component={Table} exact/>
-                <Route path="/tambahtable" component={TambahTable}/>
-               
-                <button type="submit"><Link to="/tambahtable">Tambah Data</Link></button>
-           </div>
-           
-       </div>
-       
    </div>
-    {/* isi */}
-    <Switch>
-        <Route path="/tambahtable">
-            <TambahTable />
-        </Route>
-    </Switch>
-    </Router>    
+    </>    
     )
 }
 export default Header;
